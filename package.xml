@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>iai_boxy_experiments</name>
+  <version>0.0.0</version>
+  <description>The iai_boxy_experiments package</description>
+
+  <maintainer email="georg.bartels@cs.uni-bremen.de">Georg Bartels</maintainer>
+  <author email="georg.bartels@cs.uni-bremen.de">Georg Bartels</author>
+
+  <license>BSD</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>cram_beasty</depend>
+</package>
