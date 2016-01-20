@@ -157,6 +157,14 @@
            -1.6365865468978882
            -2.268911838531494))
     (:experiment2
+     (list -1.1522574424743652
+           0.9588661789894104
+           -0.4551224410533905
+           -1.4930555820465088
+           -1.9568004608154297
+           -1.6365865468978882
+           -0.698911839))
+    (:experiment3
      (list -0.39946720004081726
            1.4901506900787354
            -0.6373277306556702
@@ -164,7 +172,7 @@
            0.5662044286727905
            -1.2445718050003052
            -0.03993133828043938))
-    (:experiment3
+    (:experiment4
      (list -0.9895088076591492
            0.7063331007957458
            -0.47424113750457764
@@ -194,7 +202,27 @@
           'transform
           :translation (make-3d-vector -0.05 -0.05 0.25)))
         ee-transform
-        )))))
+        )))
+    (:experiment2
+     (let ((ee-transform
+             ;; TODO: replace this with a call to TF!
+             ;; calib_left_arm_base_link -> left_gripper_tool_frame
+             (make-transform
+              (make-3d-vector -0.310 0.437 0.102)
+              (make-quaternion 0.683 -0.539 -0.176 0.460))))
+       (list
+        (transform*
+         ee-transform
+         (make-instance
+          'transform
+          :translation (make-3d-vector 0 0 0.13)))
+        ee-transform
+        )
+       
+       ))
+     
+
+    ))
 
 (defun run-experiment (selector arm sim-p)
   (goto-config (start-configuration selector arm) arm sim-p)
